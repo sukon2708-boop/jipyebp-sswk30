@@ -6,11 +6,10 @@
 
   <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-
->
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>ความทรงจำของเรา</title>
 
@@ -36,13 +35,10 @@ content="width=device-width, initial-scale=1.0"
 
     html,
     body {
-
       width: 100%;
       height: 100%;
-
       margin: 0;
       padding: 0;
-
       overflow: hidden;
     }
 
@@ -99,8 +95,7 @@ content="width=device-width, initial-scale=1.0"
 
 
     /* =====================================================
-       TITLE IMAGE
-       text3.png
+       TITLE
     ===================================================== */
 
     .title {
@@ -208,11 +203,7 @@ content="width=device-width, initial-scale=1.0"
 
     /* =====================================================
        PAPER
-
-       จุดเริ่มต้น = 120px
-
-       จากนั้น JavaScript จะเพิ่ม class .show
-       เพื่อให้กระดาษเลื่อนลงไปที่ 180px
+       รูปใบที่ 1 และใบที่ 2
     ===================================================== */
 
     .paper {
@@ -266,10 +257,22 @@ content="width=device-width, initial-scale=1.0"
 
 
     /* =====================================================
-       PAPER SHOW
+       PAPER ใบที่ 2
+       วางต่อจากใบแรก
+    ===================================================== */
 
-       จาก 120px
-       ลงมา 180px
+    .paper.second-paper {
+
+      top: 135px;
+
+      z-index: 99;
+
+      transition-delay: .08s;
+    }
+
+
+    /* =====================================================
+       PAPER SHOW
     ===================================================== */
 
     .paper.show {
@@ -278,11 +281,14 @@ content="width=device-width, initial-scale=1.0"
     }
 
 
+    .paper.second-paper.show {
+
+      top: 195px;
+    }
+
+
     /* =====================================================
        MEMORY PHOTO
-
-       photo.png = 1200 x 1800
-       อัตราส่วน 2:3
     ===================================================== */
 
     .memory-photo {
@@ -304,7 +310,6 @@ content="width=device-width, initial-scale=1.0"
 
       user-select: none;
 
-      /* แก้ให้สามารถกดรูปได้ */
       pointer-events: auto;
 
       cursor: pointer;
@@ -324,7 +329,8 @@ content="width=device-width, initial-scale=1.0"
       left: 50%;
       bottom: 15px;
 
-      transform: translateX(-50%);
+      transform:
+        translateX(-50%);
 
       width: 100%;
 
@@ -339,64 +345,8 @@ content="width=device-width, initial-scale=1.0"
     }
 
 
-    /* Mobile */
-
-    @media (max-width: 500px) {
-
-      .navigation {
-
-        bottom: 15px;
-      }
-    }
-
-
-    /* Small Mobile */
-
-    @media (max-width: 380px) {
-
-      .navigation {
-
-        bottom: 15px;
-      }
-    }
-
-
-    /* Very Small Mobile */
-
-    @media (max-width: 340px) {
-
-      .navigation {
-
-        bottom: 12px;
-      }
-    }
-
-
-    /* Short Screen */
-
-    @media (max-height: 700px) {
-
-      .navigation {
-
-        bottom: 15px;
-      }
-    }
-
-
-    /* Very Short Screen */
-
-    @media (max-height: 600px) {
-
-      .navigation {
-
-        bottom: 10px;
-      }
-    }
-
-
     /* =====================================================
        BACK BUTTON
-       back.png
     ===================================================== */
 
     .nav-btn {
@@ -475,10 +425,6 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
-      /* =========================
-         TITLE
-      ========================== */
-
       .title {
 
         top: 15px;
@@ -491,10 +437,6 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
-      /* =========================
-         STAGE
-      ========================== */
-
       .booth-stage {
 
         width: 100vw;
@@ -505,10 +447,6 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
-      /* =========================
-         PHOTOBOOTH
-      ========================== */
-
       .photobooth {
 
         width: 100vw;
@@ -516,10 +454,6 @@ content="width=device-width, initial-scale=1.0"
         max-width: 435px;
       }
 
-
-      /* =========================
-         PAPER
-      ========================== */
 
       .paper {
 
@@ -538,15 +472,23 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 135px;
+      }
+
+
       .paper.show {
 
         top: 180px;
       }
 
 
-      /* =========================
-         NAVIGATION
-      ========================== */
+      .paper.second-paper.show {
+
+        top: 195px;
+      }
+
 
       .navigation {
 
@@ -615,9 +557,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 130px;
+      }
+
+
       .paper.show {
 
         top: 175px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 190px;
       }
 
 
@@ -671,9 +625,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 125px;
+      }
+
+
       .paper.show {
 
         top: 170px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 185px;
       }
 
 
@@ -731,9 +697,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 120px;
+      }
+
+
       .paper.show {
 
         top: 165px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 180px;
       }
 
 
@@ -793,9 +771,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 105px;
+      }
+
+
       .paper.show {
 
         top: 150px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 165px;
       }
 
 
@@ -882,9 +872,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 135px;
+      }
+
+
       .paper.show {
 
         top: 180px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 195px;
       }
 
 
@@ -944,9 +946,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 97px;
+      }
+
+
       .paper.show {
 
         top: 142px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 157px;
       }
 
 
@@ -1010,9 +1024,21 @@ content="width=device-width, initial-scale=1.0"
       }
 
 
+      .paper.second-paper {
+
+        top: 135px;
+      }
+
+
       .paper.show {
 
         top: 180px;
+      }
+
+
+      .paper.second-paper.show {
+
+        top: 195px;
       }
 
 
@@ -1026,7 +1052,6 @@ content="width=device-width, initial-scale=1.0"
 
     /* =====================================================
        FULL PHOTO VIEW
-       กด photo.png เพื่อดูรูปเต็ม
     ===================================================== */
 
     .photo-lightbox {
@@ -1077,10 +1102,6 @@ content="width=device-width, initial-scale=1.0"
       pointer-events: auto;
     }
 
-
-    /* =====================================================
-       รูปใหญ่
-    ===================================================== */
 
     .photo-lightbox-image {
 
@@ -1246,7 +1267,9 @@ content="width=device-width, initial-scale=1.0"
 
 </head>
 
+
 <body>
+
 
   <!-- =====================================================
        MAIN
@@ -1255,91 +1278,111 @@ content="width=device-width, initial-scale=1.0"
   <main class="pic-container">
 
 
-<!-- ===================================================
-     TITLE
-     text3.png
-=================================================== -->
+    <!-- ===================================================
+         TITLE
+    =================================================== -->
 
-<div class="title">
+    <div class="title">
 
-  <img
-    src="text3.png"
-    alt=""
-    draggable="false"
-  >
+      <img
+        src="text3.png"
+        alt=""
+        draggable="false"
+      >
 
-</div>
-
-
-<!-- ===================================================
-     PHOTOBOOTH STAGE
-=================================================== -->
-
-<div class="booth-stage">
+    </div>
 
 
-  <!-- =================================================
-       PAPER
-  ================================================= -->
+    <!-- ===================================================
+         PHOTOBOOTH STAGE
+    =================================================== -->
 
-  <div
-    class="paper"
-    id="paper"
-  >
-
-    <img
-      src="photo.png"
-      class="memory-photo"
-      id="memoryPhoto"
-      alt="ความทรงจำของเรา"
-      draggable="false"
-    >
-
-  </div>
+    <div class="booth-stage">
 
 
-  <!-- =================================================
-       PHOTOBOOTH
-  ================================================= -->
+      <!-- =================================================
+           PAPER ใบที่ 1
+      ================================================= -->
 
-  <img
-    src="photobooth.png"
-    class="photobooth"
-    alt="Photo Booth"
-    draggable="false"
-  >
+      <div
+        class="paper"
+        id="paper1"
+      >
 
-</div>
+        <img
+          src="photo.png"
+          class="memory-photo"
+          id="memoryPhoto1"
+          alt="ความทรงจำของเรา รูปที่ 1"
+          draggable="false"
+        >
+
+      </div>
 
 
-<!-- ===================================================
-     NAVIGATION
-=================================================== -->
+      <!-- =================================================
+           PAPER ใบที่ 2
+      ================================================= -->
 
-<div class="navigation">
+      <div
+        class="paper second-paper"
+        id="paper2"
+      >
 
-  <a
-    href="song.html"
-    class="nav-btn"
-    aria-label="ย้อนกลับ"
-  >
+        <img
+          src="photo1.png"
+          class="memory-photo"
+          id="memoryPhoto2"
+          alt="ความทรงจำของเรา รูปที่ 2"
+          draggable="false"
+        >
 
-    <img
-      src="back.png"
-      alt="ย้อนกลับ"
-      draggable="false"
-    >
+      </div>
 
-  </a>
 
-</div>
+      <!-- =================================================
+           PHOTOBOOTH
+      ================================================= -->
+
+      <img
+        src="photobooth.png"
+        class="photobooth"
+        alt="Photo Booth"
+        draggable="false"
+      >
+
+    </div>
+
+
+    <!-- ===================================================
+         NAVIGATION
+    =================================================== -->
+
+    <div class="navigation">
+
+      <a
+        href="song.html"
+        class="nav-btn"
+        aria-label="ย้อนกลับ"
+      >
+
+        <img
+          src="back.png"
+          alt="ย้อนกลับ"
+          draggable="false"
+        >
+
+      </a>
+
+    </div>
 
 
   </main>
 
+
   <!-- =====================================================
        PHOTO LIGHTBOX
-       เปิดรูปใหญ่เมื่อกด photo.png
+       ใช้เปิดรูปทั้ง photo.png และ photo1.png
   ===================================================== -->
 
   <div
@@ -1348,26 +1391,26 @@ content="width=device-width, initial-scale=1.0"
     aria-hidden="true"
   >
 
+    <button
+      class="photo-lightbox-close"
+      id="photoLightboxClose"
+      type="button"
+      aria-label="ปิดรูป"
+    >
+      ×
+    </button>
 
-<button
-  class="photo-lightbox-close"
-  id="photoLightboxClose"
-  type="button"
-  aria-label="ปิดรูป"
->
-  ×
-</button>
 
-<img
-  src="photo.png"
-  class="photo-lightbox-image"
-  id="photoLightboxImage"
-  alt="รูปเต็ม"
-  draggable="false"
->
-
+    <img
+      src=""
+      class="photo-lightbox-image"
+      id="photoLightboxImage"
+      alt="รูปเต็ม"
+      draggable="false"
+    >
 
   </div>
+
 
   <!-- =====================================================
        JAVASCRIPT
@@ -1375,19 +1418,21 @@ content="width=device-width, initial-scale=1.0"
 
   <script>
 
-    const paper =
-      document.getElementById(
-        "paper"
-      );
-
 
     /* =====================================================
-       START ANIMATION
-
-       กระดาษเริ่มที่ 120px
-       รอ 0.8 วินาที
-       แล้วเลื่อนลงไป 180px
+       PAPER ANIMATION
     ===================================================== */
+
+    const paper1 =
+      document.getElementById(
+        "paper1"
+      );
+
+    const paper2 =
+      document.getElementById(
+        "paper2"
+      );
+
 
     window.addEventListener(
       "load",
@@ -1396,7 +1441,11 @@ content="width=device-width, initial-scale=1.0"
         setTimeout(
           function () {
 
-            paper.classList.add(
+            paper1.classList.add(
+              "show"
+            );
+
+            paper2.classList.add(
               "show"
             );
 
@@ -1410,23 +1459,16 @@ content="width=device-width, initial-scale=1.0"
 
     /* =====================================================
        PHOTO LIGHTBOX
-
-       คลิก photo.png
-       = เปิดรูปใหญ่
-
-       คลิก X
-       = ปิด
-
-       คลิกพื้นหลัง
-       = ปิด
-
-       กด ESC
-       = ปิด
     ===================================================== */
 
-    const memoryPhoto =
+    const memoryPhoto1 =
       document.getElementById(
-        "memoryPhoto"
+        "memoryPhoto1"
+      );
+
+    const memoryPhoto2 =
+      document.getElementById(
+        "memoryPhoto2"
       );
 
     const photoLightbox =
@@ -1445,10 +1487,16 @@ content="width=device-width, initial-scale=1.0"
       );
 
 
-    function openPhotoLightbox() {
+    /* =====================================================
+       OPEN
+    ===================================================== */
+
+    function openPhotoLightbox(
+      imageSource
+    ) {
 
       photoLightboxImage.src =
-        memoryPhoto.src;
+        imageSource;
 
       photoLightbox.classList.add(
         "show"
@@ -1464,6 +1512,10 @@ content="width=device-width, initial-scale=1.0"
     }
 
 
+    /* =====================================================
+       CLOSE
+    ===================================================== */
+
     function closePhotoLightbox() {
 
       photoLightbox.classList.remove(
@@ -1477,25 +1529,44 @@ content="width=device-width, initial-scale=1.0"
 
       document.body.style.overflow =
         "";
+
     }
 
 
     /* =====================================================
-       กดรูปได้ตลอดเวลา
+       CLICK PHOTO 1
     ===================================================== */
 
-    memoryPhoto.addEventListener(
+    memoryPhoto1.addEventListener(
       "click",
       function () {
 
-        openPhotoLightbox();
+        openPhotoLightbox(
+          "photo.png"
+        );
 
       }
     );
 
 
     /* =====================================================
-       ปุ่ม X
+       CLICK PHOTO 2
+    ===================================================== */
+
+    memoryPhoto2.addEventListener(
+      "click",
+      function () {
+
+        openPhotoLightbox(
+          "photo1.png"
+        );
+
+      }
+    );
+
+
+    /* =====================================================
+       CLOSE BUTTON
     ===================================================== */
 
     photoLightboxClose.addEventListener(
@@ -1509,7 +1580,7 @@ content="width=device-width, initial-scale=1.0"
 
 
     /* =====================================================
-       กดพื้นหลังเพื่อปิด
+       CLICK BACKGROUND
     ===================================================== */
 
     photoLightbox.addEventListener(
@@ -1530,7 +1601,7 @@ content="width=device-width, initial-scale=1.0"
 
 
     /* =====================================================
-       กด ESC เพื่อปิด
+       ESC
     ===================================================== */
 
     document.addEventListener(
@@ -1550,6 +1621,7 @@ content="width=device-width, initial-scale=1.0"
 
       }
     );
+
 
   </script>
 
