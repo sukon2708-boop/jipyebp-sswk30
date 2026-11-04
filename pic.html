@@ -13,10 +13,6 @@
 
   <title>ความทรงจำของเรา</title>
 
-  <!-- =========================
-       FONT
-  ========================== -->
-
   <link
     href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
     rel="stylesheet"
@@ -35,10 +31,13 @@
 
     html,
     body {
+
       width: 100%;
       height: 100%;
+
       margin: 0;
       padding: 0;
+
       overflow: hidden;
     }
 
@@ -203,7 +202,6 @@
 
     /* =====================================================
        PAPER
-       รูปใบที่ 1 และใบที่ 2
     ===================================================== */
 
     .paper {
@@ -211,6 +209,10 @@
       position: absolute;
 
       left: 50%;
+
+      /*
+        เริ่มต้นอยู่ด้านในเครื่อง
+      */
 
       top: 120px;
 
@@ -229,8 +231,6 @@
 
       background: #fff;
 
-      z-index: 100;
-
       transform:
         translateX(-50%);
 
@@ -245,6 +245,11 @@
           .15
         );
 
+      /*
+        สำคัญ:
+        ไม่มีการเลื่อนพร้อมกัน
+      */
+
       transition:
         top 7s
         cubic-bezier(
@@ -257,33 +262,60 @@
 
 
     /* =====================================================
-       PAPER ใบที่ 2
-       วางต่อจากใบแรก
+       ใบที่ 1
     ===================================================== */
 
-    .paper.second-paper {
+    #paper1 {
 
-      top: 135px;
-
-      z-index: 99;
-
-      transition-delay: .08s;
+      z-index: 101;
     }
 
 
     /* =====================================================
-       PAPER SHOW
+       ใบที่ 2
+
+       ซ่อนอยู่ในเครื่องก่อน
+       และจะเริ่ม animation ภายหลัง
     ===================================================== */
 
-    .paper.show {
+    #paper2 {
+
+      z-index: 102;
+
+      top: 120px;
+
+      visibility: hidden;
+
+      transition:
+        top 7s
+        cubic-bezier(
+          .20,
+          .60,
+          .25,
+          1
+        );
+    }
+
+
+    /* =====================================================
+       SHOW ใบที่ 1
+    ===================================================== */
+
+    #paper1.show {
 
       top: 180px;
     }
 
 
-    .paper.second-paper.show {
+    /* =====================================================
+       SHOW ใบที่ 2
+    ===================================================== */
 
-      top: 195px;
+    #paper2.show {
+
+      top: 180px;
+
+      visibility: visible;
     }
 
 
@@ -472,21 +504,15 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 135px;
-      }
-
-
-      .paper.show {
+      #paper1.show {
 
         top: 180px;
       }
 
 
-      .paper.second-paper.show {
+      #paper2.show {
 
-        top: 195px;
+        top: 180px;
       }
 
 
@@ -557,21 +583,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 130px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 175px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 190px;
       }
 
 
@@ -606,7 +621,7 @@
         width:
           min(
             290px,
-            calc(100% - 20px)
+            calc(100% - 20px
           );
       }
 
@@ -625,21 +640,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 125px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 170px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 185px;
       }
 
 
@@ -697,21 +701,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 120px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 165px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 180px;
       }
 
 
@@ -771,21 +764,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 105px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 150px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 165px;
       }
 
 
@@ -804,7 +786,7 @@
 
 
     /* =====================================================
-       TABLET / iPAD PORTRAIT
+       TABLET
     ===================================================== */
 
     @media
@@ -872,21 +854,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 135px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 180px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 195px;
       }
 
 
@@ -899,7 +870,7 @@
 
 
     /* =====================================================
-       TABLET / iPAD LANDSCAPE
+       TABLET LANDSCAPE
     ===================================================== */
 
     @media
@@ -946,21 +917,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 97px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 142px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 157px;
       }
 
 
@@ -979,7 +939,7 @@
 
 
     /* =====================================================
-       LARGE DESKTOP
+       DESKTOP
     ===================================================== */
 
     @media (min-width: 1200px) {
@@ -1024,21 +984,10 @@
       }
 
 
-      .paper.second-paper {
-
-        top: 135px;
-      }
-
-
-      .paper.show {
+      #paper1.show,
+      #paper2.show {
 
         top: 180px;
-      }
-
-
-      .paper.second-paper.show {
-
-        top: 195px;
       }
 
 
@@ -1065,7 +1014,6 @@
       display: flex;
 
       justify-content: center;
-
       align-items: center;
 
       width: 100vw;
@@ -1108,11 +1056,9 @@
       display: block;
 
       width: auto;
-
       height: auto;
 
       max-width: 96vw;
-
       max-height: 94vh;
 
       object-fit: contain;
@@ -1163,11 +1109,9 @@
       position: absolute;
 
       top: 15px;
-
       right: 15px;
 
       width: 44px;
-
       height: 44px;
 
       padding: 0;
@@ -1249,11 +1193,9 @@
       .photo-lightbox-close {
 
         top: 10px;
-
         right: 10px;
 
         width: 40px;
-
         height: 40px;
 
         font-size: 27px;
@@ -1278,9 +1220,7 @@
   <main class="pic-container">
 
 
-    <!-- ===================================================
-         TITLE
-    =================================================== -->
+    <!-- TITLE -->
 
     <div class="title">
 
@@ -1294,14 +1234,14 @@
 
 
     <!-- ===================================================
-         PHOTOBOOTH STAGE
+         PHOTOBOOTH
     =================================================== -->
 
     <div class="booth-stage">
 
 
       <!-- =================================================
-           PAPER ใบที่ 1
+           ใบที่ 1 : photo.png
       ================================================= -->
 
       <div
@@ -1321,11 +1261,11 @@
 
 
       <!-- =================================================
-           PAPER ใบที่ 2
+           ใบที่ 2 : photo1.png
       ================================================= -->
 
       <div
-        class="paper second-paper"
+        class="paper"
         id="paper2"
       >
 
@@ -1340,9 +1280,7 @@
       </div>
 
 
-      <!-- =================================================
-           PHOTOBOOTH
-      ================================================= -->
+      <!-- PHOTOBOOTH -->
 
       <img
         src="photobooth.png"
@@ -1381,9 +1319,8 @@
 
 
   <!-- =====================================================
-       PHOTO LIGHTBOX
-       ใช้เปิดรูปทั้ง photo.png และ photo1.png
-  ===================================================== -->
+       LIGHTBOX
+    ===================================================== -->
 
   <div
     class="photo-lightbox"
@@ -1414,13 +1351,13 @@
 
   <!-- =====================================================
        JAVASCRIPT
-  ===================================================== -->
+    ===================================================== -->
 
   <script>
 
 
     /* =====================================================
-       PAPER ANIMATION
+       ELEMENTS
     ===================================================== */
 
     const paper1 =
@@ -1434,9 +1371,24 @@
       );
 
 
+    /* =====================================================
+       ปริ้นทีละใบ
+
+       0.8 วินาที
+       → ใบที่ 1 เริ่มออก
+
+       8.5 วินาที
+       → ใบที่ 1 จบ
+       → ใบที่ 2 เริ่มออก
+
+       จึงไม่มีการซ้อนกัน
+    ===================================================== */
+
     window.addEventListener(
       "load",
       function () {
+
+        /* ใบที่ 1 */
 
         setTimeout(
           function () {
@@ -1445,12 +1397,44 @@
               "show"
             );
 
+          },
+          800
+        );
+
+
+        /* ใบที่ 2 */
+
+        setTimeout(
+          function () {
+
+            /*
+              เอาใบแรกกลับเข้าเครื่องก่อน
+              เพื่อให้ใบที่ 2 ออกมาแทนตำแหน่งเดิม
+            */
+
+            paper1.classList.remove(
+              "show"
+            );
+
+
+            /*
+              ทำให้ใบที่ 2 มองเห็น
+            */
+
+            paper2.style.visibility =
+              "visible";
+
+
+            /*
+              เริ่มปริ้นใบที่ 2
+            */
+
             paper2.classList.add(
               "show"
             );
 
           },
-          800
+          8500
         );
 
       }
@@ -1458,7 +1442,7 @@
 
 
     /* =====================================================
-       PHOTO LIGHTBOX
+       LIGHTBOX
     ===================================================== */
 
     const memoryPhoto1 =
@@ -1488,7 +1472,7 @@
 
 
     /* =====================================================
-       OPEN
+       OPEN PHOTO
     ===================================================== */
 
     function openPhotoLightbox(
@@ -1513,7 +1497,7 @@
 
 
     /* =====================================================
-       CLOSE
+       CLOSE PHOTO
     ===================================================== */
 
     function closePhotoLightbox() {
@@ -1529,12 +1513,11 @@
 
       document.body.style.overflow =
         "";
-
     }
 
 
     /* =====================================================
-       CLICK PHOTO 1
+       PHOTO 1
     ===================================================== */
 
     memoryPhoto1.addEventListener(
@@ -1550,7 +1533,7 @@
 
 
     /* =====================================================
-       CLICK PHOTO 2
+       PHOTO 2
     ===================================================== */
 
     memoryPhoto2.addEventListener(
@@ -1621,7 +1604,6 @@
 
       }
     );
-
 
   </script>
 
